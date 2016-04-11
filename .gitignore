@@ -27,10 +27,13 @@ build/Release
 # Dependency directories
 node_modules
 jspm_packages
-components-from-demo
 
 # Optional npm cache directory
 .npm
 
 # Optional REPL history
 .node_repl_history
+
+# Other
+components-from-demo
+compiled.js

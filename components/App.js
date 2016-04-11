@@ -1,15 +1,36 @@
 var React = require('react');
 
+// react components
+var Map = require('./Map');
+
 var App = React.createClass({
 
-	setGeolocation(address){
+	getInitialState(){
+
+		return {
+			mapCoordinates: {
+				lat: 48.856614,
+				lng: 2.3522219
+			}
+		};
+	},
+
+	setGeolocation(){
 
 		navigator.geolocation.getCurrentPosition(function(position) {
-			console.log('Getting GPS coordinates...');
 			latitude = position.coords.latitude;
 			longitude = position.coords.longitude;
-			console.log('Coordinates are ' + latitude + ', ' + longitude);
-		});
+			return(latitude, longitude);
+		})
+		.then(function(latitude, longitude) {
+			console.log('Promise worked!');
+			return {
+				mapCoordinates: {
+					lat: latitude,
+					lng: longitude,
+				}
+			};
+		})
 
 	},
 
@@ -20,6 +41,7 @@ var App = React.createClass({
 			<div>
 				<h1>Hello World</h1>
 				<button class="btn btn-default"	onClick={this.setGeolocation}>Set Location</button>
+				<Map lat={this.state.mapCoordinates.lat} lng={this.state.mapCoordinates.lng} />
 			</div>
 
 		);
