@@ -3,6 +3,7 @@
 import express from 'express'
 import config from 'config'
 import api from './routes'
+import bodyParer from 'body-parser'
 
 const app = express()
 const PORT = config.port
