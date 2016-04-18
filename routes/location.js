@@ -1,7 +1,7 @@
 'use strict'
 
 import express from 'express'
-import Location from './models/location'
+import Location from './location'
 
 const { Router } = express
 const locationRouter = new Router()
@@ -15,7 +15,7 @@ locationRouter.get('/', (req, res, next) => {
 })
 
 // sends the updated location to the databse
-todosRouter.post('/', (req, res, next) => {
+locationRouter.post('/', (req, res, next) => {
   Location.create(req.body)
     .then((locations) => res.status(201).json(locations))
     .catch(next)
