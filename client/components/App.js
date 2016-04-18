@@ -1,37 +1,14 @@
-import React, { Component } from 'react'
-import SetLocation from './SetLocation'
-import LocationList from './LocationList'
+'use strict'
 
-class App extends Component {
+import React from 'react'
+import LocationContainer from '../containers/LocationContainer'
 
-  constructor(props) {
-    super(props)
-    this.state = { todos: [], autoId: 1 }
-    this.setLocation = this.setLocation.bind(this)
-  }
-
-  setLocation(name) {
-    this.setState({
-      autoId: this.state.autoId + 1,
-      todos: [
-        ...this.state.locations,
-        {
-          id: this.state.autoId,
-          longitude,
-          latitude,
-          status: false
-        }
-      ]
-    })
-  }
+class App extends React.Component {
 
   render() {
     return (
       <div>
-        <SetLocation onSubmit={this.setLocation} />
-        <LocationList
-          locations={this.state.locations}
-        />
+        <LocationContainer />
       </div>
     )
   }

@@ -11,7 +11,7 @@ const locationSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  status: {
+  isOpen: {
     type: Boolean,
     required: true
   }
