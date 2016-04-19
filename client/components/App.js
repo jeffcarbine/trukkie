@@ -2,6 +2,7 @@
 
 import React from 'react'
 import LocationContainer from '../containers/LocationContainer'
+import LocationListContainer from '../containers/LocationListContainer'
 
 class App extends React.Component {
 
@@ -9,6 +10,7 @@ class App extends React.Component {
     return (
       <div>
         <LocationContainer />
+        <LocationListContainer />
       </div>
     )
   }

@@ -20,7 +20,7 @@ class LocationList extends React.Component {
                   latitude={location.latitude}
                   longitude={location.longitude}
                   isOpen={location.isOpen}
-                  onDeleteClick={() => this.props.onLocationDeleteClick(todo)}
+                  onDeleteClick={() => this.props.onLocationDeleteClick(location)}
                 />
               </li>
             )

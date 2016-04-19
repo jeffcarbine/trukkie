@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class AddTodo extends React.Component {
+class SetLocation extends React.Component {
 
   constructor(props) {
     super(props)
@@ -9,15 +9,16 @@ class AddTodo extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    const input = this.refs.input
-    this.props.onSubmit(input.value)
-    input.value = ''
+    navigator.geolocation.getCurrentPosition((position) => {
+      const longitude = position.coords.longitude
+      const latitude = position.coords.latitude
+    })
+    const isOpen = true;
   }
 
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input ref="input" />
         <button>Set Location</button>
       </form>
     )
@@ -25,4 +26,4 @@ class AddTodo extends React.Component {
 
 }
 
-export default AddTodo
+export default SetLocation
