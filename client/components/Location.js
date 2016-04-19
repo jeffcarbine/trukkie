@@ -8,9 +8,7 @@ const Location = (props) => {
   }
   return (
     <div>
-      <span style={styles} onClick={() => props.onClick()}>{`props.longitude, props.latitude & props.isOpen`}</span>
-      &nbsp;
-      <button onClick={props.onDeleteClick}>X</button>
+      <span style={styles} onClick={() => props.onClick()}>{`${props.longitude}, ${props.latitude} & ${props.isOpen}`}</span>
     </div>
   )
 }

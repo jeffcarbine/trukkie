@@ -16,15 +16,15 @@ const setLocationFailure = (err) => ({
   error: true
 })
 
-export const setLocation = (name) => (dispatch) => {
+export const setLocation = (longitude, latitude) => (dispatch) => {
   const location = {
     longitude,
     latitude,
     isOpen: true
   }
-  dispatch(setLocationRequest(todo))
+  dispatch(setLocationRequest(location))
   request
-    .post('/api/todos', todo)
+    .post('/api/location', location)
     .then((response) => {
       dispatch(setLocationSuccess(response.data))
     })

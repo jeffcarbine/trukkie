@@ -12,8 +12,8 @@ class SetLocation extends React.Component {
     navigator.geolocation.getCurrentPosition((position) => {
       const longitude = position.coords.longitude
       const latitude = position.coords.latitude
+      this.props.setLocation(longitude, latitude)
     })
-    const isOpen = true;
   }
 
   render() {

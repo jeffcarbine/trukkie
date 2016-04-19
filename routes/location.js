@@ -1,7 +1,7 @@
 'use strict'
 
 import express from 'express'
-import Location from './location'
+import Location from '../models/location'
 
 const { Router } = express
 const locationRouter = new Router()

@@ -1,7 +1,7 @@
 'use strict'
 
 import React from 'react'
-import LocationContainer from '../containers/LocationContainer'
+import SetLocationContainer from '../containers/SetLocationContainer'
 import LocationListContainer from '../containers/LocationListContainer'
 
 class App extends React.Component {
@@ -9,7 +9,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <LocationContainer />
+        <SetLocationContainer />
         <LocationListContainer />
       </div>
     )
