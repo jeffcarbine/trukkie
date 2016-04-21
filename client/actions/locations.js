@@ -33,28 +33,28 @@ export const setLocation = (longitude, latitude) => (dispatch) => {
     })
 }
 
-const listLocationsRequest = () => ({
-  type: 'LOCATION_LIST_REQUEST'
+const fetchLocationsRequest = () => ({
+  type: 'LOCATION_FETCH_REQUEST'
 })
-const listLocationsSuccess = (todos) => ({
-  type: 'LOCATION_LIST_SUCCESS',
+const fetchLocationsSuccess = (todos) => ({
+  type: 'LOCATION_FETCH_SUCCESS',
   payload: todos
 })
-const listLocationsFailure = (err) => ({
-  type: 'LOCATION_LIST_FAILURE',
+const fetchLocationsFailure = (err) => ({
+  type: 'LOCATION_FETCH_FAILURE',
   payload: err,
   error: true
 })
 
-export const listLocations = () => (dispatch) => {
-  dispatch(listTodolistLocationsRequestsRequest())
+export const fetchLocations = () => (dispatch) => {
+  dispatch(fetchLocationsRequest())
   request
-    .get('/api/todos')
+    .get('/api/location')
     .then((response) => {
-      dispatch(listLocationsSuccess(response.data))
+      dispatch(fetchLocationsSuccess(response.data))
     })
     .catch((response) => {
-      dispatch(listLocationsFailure(response.data))
+      dispatch(fetchLocationsFailure(response.data))
     })
 }
 

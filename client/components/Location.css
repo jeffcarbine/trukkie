@@ -1,0 +1,10 @@
+.location {
+  width: 100%;
+  font-family: sans-serif;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.locationText {
+  cursor: pointer;
+}

@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Location from './Location'
+import styles from './LocationList.css'
 
 class LocationList extends React.Component {
 
@@ -11,11 +12,11 @@ class LocationList extends React.Component {
 
   render() {
     return (
-      <ul>
+      <ul className={styles.list}>
         {
           this.props.locations.map((location) => {
             return (
-              <li key={location.id}>
+              <li className={styles.listItem} key={location.id}>
                 <Location
                   latitude={location.latitude}
                   longitude={location.longitude}

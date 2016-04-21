@@ -17,7 +17,7 @@ export default (state = DEFAULT_STATE, action) => {
           action.payload
         ]
       })
-    case 'LOCATION_LIST_SUCCESS':
+    case 'LOCATION_FETCH_SUCCESS':
       return Object.assign({}, state, { items: action.payload })
     case 'LOCATION_UPDATE_SUCCESS':
       return Object.assign({}, state, {
