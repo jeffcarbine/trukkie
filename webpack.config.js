@@ -1,5 +1,6 @@
 var path = require('path')
 var config = require('config')
+var webpack = require('webpack')
 
 module.exports = {
   entry: './client/entry.js',
@@ -11,6 +12,10 @@ module.exports = {
   plugins: [],
   module: {
     loaders: [
+      {
+        test: /\.js$/,
+        loader: 'transform?envify'
+      },
       {
         test: /\.js$/, // Telling webpack to use files that match this pattern
         loader: 'babel', // Uses the module `babel-loader`
@@ -27,4 +32,12 @@ module.exports = {
       '**': `http://localhost:${config.get('port')}`
     }
   }
+}
+
+if (process.env.NODE_ENV == 'production') {
+  module.exports.plugins.push(new webpack.optimize.UglifyJsPlugin({
+    compress: {
+      warnings: false
+    }
+  }))
 }
