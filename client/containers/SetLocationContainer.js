@@ -9,6 +9,7 @@ const mapDispatchToProps = (dispatch) => {
     setLocation(longitude, latitude){
       dispatch(setLocation(longitude, latitude))
     }
+
   }
 }
 
